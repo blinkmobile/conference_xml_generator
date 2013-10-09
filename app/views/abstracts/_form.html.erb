@@ -1,0 +1,33 @@
+<%= form_for([@conference,@abstract]) do |f| %>
+  <% if @abstract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@abstract.errors.count, "error") %> prohibited this abstract from being saved:</h2>
+
+      <ul>
+      <% @abstract.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+	<table><tr></tr>
+        <% f.fields_for :abstractnmaps do |builder| %>
+            <%=render 'abstractnmap_fields', :f => builder %>
+        <% end %>
+	</table>
+    <p><%= link_to_add_fields "Add Speaker", f, :abstractnmaps %></p>
+
+  <div class="field">
+    <%= f.label :text, 'Abstract Text'%><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

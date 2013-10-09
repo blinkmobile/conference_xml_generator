@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @room.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @room.description %>
+</p>
+
+<p>
+  <b>Imageurl:</b>
+  <%= @room.imageurl %>
+</p>
+
+<p>
+  <b>Conference:</b>
+  <%= @room.conference_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_room_path(@conference, @room) %> |
+<%= link_to 'Back', conference_rooms_path %>

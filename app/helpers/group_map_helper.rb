@@ -1,0 +1,2 @@
+module GroupMapHelper
+end

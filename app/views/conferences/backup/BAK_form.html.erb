@@ -1,0 +1,87 @@
+<%= form_for(@conference) do |f| %>
+  <% if @conference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conference.errors.count, "error") %> prohibited this conference from being saved:</h2>
+
+      <ul>
+      <% @conference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2>Conference Name</h2>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <hr />
+
+<h2>Days</h2>
+<table>
+<% f.fields_for :days do |builder| %>
+    <%=render 'day_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Day", f, :days %></p>
+<hr />
+
+<h2>Sessions</h2>
+<table>
+<% f.fields_for :sessions do |builder| %>
+    <%=render 'session_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Session", f, :sessions %></p>
+<hr />
+
+<h2>Speakers</h2>
+<table>
+<% f.fields_for :speakers do |builder| %>
+    <%=render 'speaker_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Speaker", f, :speakers %></p>
+<hr />
+
+<h2>Abstracts</h2>
+<table>
+<% f.fields_for :abstracts do |builder| %>
+    <%=render 'abstract_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Abstract", f, :abstracts %></p>
+<hr />
+
+<h2>Sponsors</h2>
+<table>
+<% f.fields_for :sponsors do |builder| %>
+    <%=render 'sponsor_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Sponsor", f, :sponsors %></p>
+<hr />
+
+<h2>Rooms</h2>
+<table>
+<% f.fields_for :rooms do |builder| %>
+    <%=render 'room_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Room", f, :rooms %></p>
+<hr />
+
+<h2>Groups</h2>
+<table>
+<% f.fields_for :groups do |builder| %>
+    <%=render 'group_fields', :f => builder %>
+<% end %>
+</table>
+<p><%= link_to_add_fields "Add Group", f, :groups %></p>
+<hr />
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

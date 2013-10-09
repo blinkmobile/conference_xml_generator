@@ -1,0 +1,10 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :speaker_id %>
+    <%= f.select :speaker_id, @conference.speakers.all.collect {|g| [ g.name, g.id ] }, {:include_blank => true, :default => nil} %>
+  </td>
+    <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+</tr>

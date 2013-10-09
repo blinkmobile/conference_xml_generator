@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  day_id: 1
+  starttime: 1
+  visible: false
+  conference_id: 1
+
+two:
+  title: MyString
+  day_id: 1
+  starttime: 1
+  visible: false
+  conference_id: 1

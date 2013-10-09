@@ -1,0 +1,32 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </td>
+  <td class="field">
+    <%= f.label :information %>
+    <%= f.text_field :information %>
+  </td>
+  <td class="field">
+    <%= f.label :level %>
+    <%= f.text_field :level %>
+  </td>
+  <td class="field">
+    <%= f.label :logourl %>
+    <%= f.text_field :logourl %>
+  </td>
+    <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+    
+<td>
+        <table><tr></tr>
+        <% f.fields_for :documents do |builder| %>
+            <%=render 'document_fields', :f => builder %>
+        <% end %>
+        </table>
+        <p><%= link_to_add_fields "Add Document", f, :documents %></p>
+        <hr />
+</td>
+</tr>

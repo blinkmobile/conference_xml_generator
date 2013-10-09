@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  group: MyString
+  group: MyString
+  subgroup: MyString
+  icon: MyString
+
+two:
+  name: MyString
+  url: MyString
+  group: MyString
+  group: MyString
+  subgroup: MyString
+  icon: MyString

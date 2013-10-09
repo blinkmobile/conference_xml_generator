@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Group:</b>
+  <%= @grouping.group_id %>
+</p>
+
+<p>
+  <b>Subgroup:</b>
+  <%= @grouping.subgroup_id %>
+</p>
+
+<p>
+  <b>Session:</b>
+  <%= @grouping.session_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_grouping_path(@grouping) %> |
+<%= link_to 'Back', groupings_path %>

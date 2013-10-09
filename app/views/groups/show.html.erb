@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @group.title %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @group.day_id %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @group.starttime %>
+</p>
+
+<p>
+  <b>Visible:</b>
+  <%= @group.visible %>
+</p>
+
+<p>
+  <b>Conference:</b>
+  <%= @group.conference_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_group_path(@conference, @group) %> |
+<%= link_to 'Back', conference_groups_path %>

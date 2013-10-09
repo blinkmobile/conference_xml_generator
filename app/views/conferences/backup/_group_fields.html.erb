@@ -1,0 +1,50 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </td>
+  <td class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </td>
+  <td class="field">
+    <%= f.label :day_id , 'Day ID'%>
+    <%= f.select :day_id, @conference.days.all.collect {|d| [ d.displayName, d.id ] }%>
+  </td>
+  <td class="field">
+    <%= f.label :starttime, 'Group Start Time'%>
+    <%= f.text_field :starttime %>
+  </td>
+  <td class="field">
+    <%= f.label :endtime, 'Group End Time'%>
+    <%= f.text_field :endtime %>
+  </td>
+  <td class="field">
+    <%= f.label :visible, 'Visible at main level'%>
+    <%= f.check_box :visible %>
+  </td>
+  <td class="field">
+    <%= f.label :imageurl %>
+    <%= f.text_field :imageurl %>
+  </td>
+  <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+  </td>
+  <td>
+      <table><tr></tr>
+        <% f.fields_for :groupings do |builder| %>
+            <%=render 'grouping_fields', :f => builder %>
+        <% end %>
+      </table>
+      <p><%= link_to_add_fields "Add Groups/Sessions to group", f, :groupings %></p>
+  </td>
+  <td>
+      <table><tr></tr>
+        <% f.fields_for :groupmaps do |builder| %>
+            <%=render 'groupmap_fields', :f => builder %>
+        <% end %>
+      </table>
+      <p><%= link_to_add_fields "Add Speakers to group", f, :groupmaps %></p>
+  </td>
+</tr>

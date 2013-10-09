@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @sessionmap.session_id %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%= @sessionmap.speaker_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_sessionmap_path(@sessionmap) %> |
+<%= link_to 'Back', sessionmaps_path %>

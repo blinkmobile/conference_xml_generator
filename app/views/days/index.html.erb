@@ -1,0 +1,28 @@
+<h1>Listing days</h1>
+
+<table>
+  <tr>
+    <th>Displayname</th>
+    <th>Conference</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @days.each do |day| %>
+  <tr>
+    <td><%= day.displayName %></td>
+    <td><%= link_to 'Show', conference_day_path(@conference, day) %></td>
+    <td><%= link_to 'Edit', edit_conference_day_path(@conference, day) %></td>
+    <td><%= link_to 'Destroy', conference_day_path(@conference, day), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Day', new_conference_day_path %>
+<br />
+<br />
+
+<%= link_to 'Back', conferences_path %>

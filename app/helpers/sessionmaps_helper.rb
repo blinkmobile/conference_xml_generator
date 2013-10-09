@@ -1,0 +1,2 @@
+module SessionmapsHelper
+end

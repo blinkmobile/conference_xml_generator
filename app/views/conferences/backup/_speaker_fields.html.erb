@@ -1,0 +1,30 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </td>
+  <td class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </td>
+  <td class="field">
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </td>
+  <td class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </td>
+  <td class="field">
+    <%= f.label :bio %>
+    <%= f.text_field :bio %>
+  </td>
+  <td class="field">
+    <%= f.label :imageurl %>
+    <%= f.text_field :imageurl %>
+  </td>
+  <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+</tr>

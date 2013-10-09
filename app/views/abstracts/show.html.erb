@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @abstract.title %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%= @abstract.speaker_id %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @abstract.text %>
+</p>
+
+<p>
+  <b>Conference:</b>
+  <%= @abstract.conference_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_abstract_path(@conference, @abstract) %> |
+<%= link_to 'Back', conference_abstracts_path %>

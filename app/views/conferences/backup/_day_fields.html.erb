@@ -1,0 +1,14 @@
+<tr class="fields">
+    <td class="field">
+        <%= f.label :date, 'Date'%>
+        <%= f.text_field :date %>
+    </td>
+    <td class="field">
+        <%= f.label :displayName, 'Display name for Day'%>
+        <%= f.text_field :displayName %>
+    </td>
+    <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+</tr>

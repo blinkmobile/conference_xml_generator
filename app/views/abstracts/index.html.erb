@@ -1,0 +1,30 @@
+<h1>Listing abstracts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Speaker</th>
+    <th>Text</th>
+    <th>Conference</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @abstracts.each do |abstract| %>
+  <tr>
+    <td><%= abstract.title %></td>
+    <td><%= link_to 'Show', conference_abstract_path(@conference, abstract) %></td>
+    <td><%= link_to 'Edit', edit_conference_abstract_path(@conference, abstract) %></td>
+    <td><%= link_to 'Destroy', conference_abstract_path(@conference, abstract), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Abstract', new_conference_abstract_path %>
+<br />
+<br />
+
+<%= link_to 'Back', conferences_path %>

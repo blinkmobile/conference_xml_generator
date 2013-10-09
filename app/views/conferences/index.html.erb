@@ -1,0 +1,27 @@
+
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @conferences.each do |conference| %>
+  <tr>
+    <td><%= conference.name %></td>
+    <td><%= link_to 'Show', conference %></td>
+    <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
+    <td><%= link_to 'Days', conference_days_path(conference) %></td>
+    <td><%= link_to 'Sessions', conference_sessions_path(conference) %></td>
+    <td><%= link_to 'Speakers', conference_speakers_path(conference) %></td>
+    <td><%= link_to 'Abstracts', conference_abstracts_path(conference) %></td>
+    <td><%= link_to 'Sponsors', conference_sponsors_path(conference) %></td>
+    <td><%= link_to 'Rooms', conference_rooms_path(conference) %></td>
+    <td><%= link_to 'Groups', conference_groups_path(conference) %></td>
+    <td><%= link_to 'XML', conference_path(conference) + ".xml" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Conference', new_conference_path %>

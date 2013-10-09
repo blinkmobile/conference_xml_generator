@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Conference Interactions</h2>
+
+<h2>Agenda</h2>
+<ul>
+<% for day in @conference.days %>
+        <li><%= day.displayName %></li>
+<% end %>
+<li>Search</li>
+</ul>
+
+<br />
+<hr/>
+
+<h2>Speakers</h2>
+<ul>
+<li>Search</li>
+</ul>
+
+<br />
+<hr/>
+
+<h2>Abstracts</h2>
+<ul>
+<li>Search</li>
+</ul>
+
+<br />
+<hr/>
+
+<h2>Sponsors</h2>
+<ul>
+<% for sponsor in @conference.sponsors %>
+	<li><%= #sponsor.level %></li>
+<% end %>
+</ul>
+
+<br />
+<hr/>
+
+<h2>Rooms</h2>
+<ul>
+<% for room in @conference.rooms %>
+<% end %>
+</ul>
+
+<br />
+<hr/>
+
+<h2>Groups</h2>
+<ul>
+<% for group in @conference.groups %>
+<% end %>
+</ul>
+
+<br />
+<hr/>
+
+<h1>Jays Must Have Livezone List!</h1>
+<table border="1">
+	<tr>
+        <th>ID</th>
+    </tr>
+<% for session in @conference.sessions %>
+	<% if session.livezone %>
+		<tr>
+			<td><%= session.id %></td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_conference_path(@conference) %> |
+<%= link_to 'Back', conferences_path %>

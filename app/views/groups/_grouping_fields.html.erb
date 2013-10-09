@@ -1,0 +1,14 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :subgroup_id %>
+    <%= f.select :subgroup_id, @conference.groups.all.collect {|g| [ g.title, g.id ] }, {:include_blank => true, :default => nil} %>
+  </td>
+  <td class="field">
+    <%= f.label :session_id %>
+    <%= f.select :session_id, @conference.sessions.all.collect {|s| [ s.title, s.id ]}, {:include_blank => true, :default => nil}  %>
+  </td>
+    <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+</tr>

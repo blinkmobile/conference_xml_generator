@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @document.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @document.url %>
+</p>
+
+<p>
+  <b>Conference:</b>
+  <%= @document.conference_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_document_path(@conference, @document) %> |
+<%= link_to 'Back', conference_documents_path %>

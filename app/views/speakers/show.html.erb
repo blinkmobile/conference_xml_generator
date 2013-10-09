@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @speaker.name %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @speaker.bio %>
+</p>
+
+<p>
+  <b>Imageurl:</b>
+  <%= @speaker.imageurl %>
+</p>
+
+<p>
+  <b>Conference:</b>
+  <%= @speaker.conference_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_speaker_path(@conference, @speaker) %> |
+<%= link_to 'Back', conference_speakers_path %>

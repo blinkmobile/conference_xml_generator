@@ -1,0 +1,57 @@
+<%= form_for([@conference,@group]) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :day_id %><br />
+    <%= f.select :day_id, @conference.days.all.collect {|d| [ d.displayName, d.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :starttime, 'Group Start Time' %><br />
+    <%= f.text_field :starttime %>
+  </div>
+  <div class="field">
+    <%= f.label :endtime, 'Group End Time'%>
+    <%= f.text_field :endtime %>
+  </div>
+  <div class="field">
+    <%= f.label :visible, 'Visible at main level' %><br />
+    <%= f.check_box :visible %>
+  </div>
+  <td class="field">
+    <%= f.label :imageurl %>
+    <%= f.text_field :imageurl %>
+  </td>
+  <table><tr></tr>
+        <% f.fields_for :groupings do |builder| %>
+            <%=render 'grouping_fields', :f => builder %>
+        <% end %>
+	</table>
+    <p><%= link_to_add_fields "Add Groups/Sessions to group", f, :groupings %></p>
+	<table><tr></tr>
+        <% f.fields_for :groupmaps do |builder| %>
+            <%=render 'groupmap_fields', :f => builder %>
+        <% end %>
+    </table>
+    <p><%= link_to_add_fields "Add Speakers to group", f, :groupmaps %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

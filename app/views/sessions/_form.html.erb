@@ -1,0 +1,64 @@
+<%= form_for([@conference,@session]) do |f| %>
+  <% if @session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% @session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :day_id, 'Day ID' %><br />
+    <%= f.select :day_id, @conference.days.all.collect {|d| [ d.displayName, d.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :starttime, 'Session Start Time' %><br />
+    <%= f.text_field :starttime %>
+  </div>
+  <div class="field">
+    <%= f.label :endtime, 'Session End Time' %><br />
+    <%= f.text_field :endtime %>
+  </div>
+	<table><tr></tr>
+        <% f.fields_for :sessionmaps do |builder| %>
+            <%=render 'sessionmap_fields', :f => builder %>
+        <% end %>
+    </table>
+    <p><%= link_to_add_fields "Add Speaker", f, :sessionmaps %></p>
+    <hr />
+  <div class="field">
+    <%= f.label :abstract_id, 'Abstract ID' %>
+    <%= f.select :abstract_id, @conference.abstracts.all.collect {|a| [ a.title, a.id ] }, {:include_blank => true, :default => nil} %>
+  </div>
+  <div class="field">
+    <%= f.label :room_id , 'Room ID'%>
+    <%= f.select :room_id, @conference.rooms.all.collect {|r| [ r.name, r.id ] }, {:include_blank => true, :default => nil} %>
+  </div>
+  <div class="field">
+    <%= f.label :rate , 'Rate this Session?'%>
+    <%= f.check_box :rate %>
+  </div>
+  <div class="field">
+    <%= f.label :livezone , 'Livezone?'%>
+    <%= f.check_box :livezone %>
+  </div>
+  <div class="field">
+    <%= f.label :imageurl %>
+    <%= f.text_field :imageurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

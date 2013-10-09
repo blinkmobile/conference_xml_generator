@@ -1,0 +1,30 @@
+<h1>Listing speakers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio</th>
+    <th>Imageurl</th>
+    <th>Conference</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @speakers.each do |speaker| %>
+  <tr>
+    <td><%= speaker.name %></td>
+    <td><%= link_to 'Show', conference_speaker_path(@conference, speaker) %></td>
+    <td><%= link_to 'Edit', edit_conference_speaker_path(@conference, speaker) %></td>
+    <td><%= link_to 'Destroy', conference_speaker_path(@conference, speaker), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Speaker', new_conference_speaker_path %>
+<br />
+<br />
+
+<%= link_to 'Back', conferences_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  day_id: 1
+  starttime: MyString
+  endtime: MyString
+  speaker_id: 1
+  abstract_id: 1
+  room_id: 1
+  conference_id: 1
+
+two:
+  title: MyString
+  day_id: 1
+  starttime: MyString
+  endtime: MyString
+  speaker_id: 1
+  abstract_id: 1
+  room_id: 1
+  conference_id: 1

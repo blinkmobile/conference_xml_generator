@@ -1,0 +1,56 @@
+<tr class="fields">
+  <td class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </td>
+  <td class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </td>
+  <td class="field">
+    <%= f.label :day_id , 'Day ID'%>
+    <%= f.select :day_id, @conference.days.all.collect {|d| [ d.displayName, d.id ] } %>
+  </td>
+
+  <td class="field">
+    <%= f.label :starttime, 'Session Start Time' %>
+    <%= f.text_field :starttime %>
+  </td>
+  <td class="field">
+    <%= f.label :endtime, 'Session End Time'%>
+    <%= f.text_field :endtime %>
+  </td>
+  <td>
+        <table><tr></tr>
+        <% f.fields_for :sessionmaps do |builder| %>
+            <%=render 'sessionmap_fields', :f => builder %>
+        <% end %>
+        </table>
+        <p><%= link_to_add_fields "Add Speaker", f, :sessionmaps %></p>
+        <hr />
+  </td>
+  <td class="field">
+    <%= f.label :abstract_id, 'Abstract ID' %>
+    <%= f.select :abstract_id, @conference.abstracts.all.collect {|a| [ a.title, a.id ] }, {:include_blank => true, :default => nil} %>
+  </td>
+  <td class="field">
+    <%= f.label :room_id , 'Room ID'%>
+    <%= f.select :room_id, @conference.rooms.all.collect {|r| [ r.name, r.id ] }, {:include_blank => true, :default => nil} %>
+  </td>
+  <td class="field">
+    <%= f.label :rate , 'Rate this Session?'%>
+    <%= f.check_box :rate %>
+  </td>
+  <td class="field">
+    <%= f.label :livezone , 'Livezone?'%>
+    <%= f.check_box :livezone %>
+  </td>
+  <td class="field">
+    <%= f.label :imageurl %>
+    <%= f.text_field :imageurl %>
+  </td>
+    <td class="field">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_remove_fields "remove", f %>
+    </td>
+</tr>

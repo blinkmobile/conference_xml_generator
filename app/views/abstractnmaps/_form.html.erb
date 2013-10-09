@@ -1,0 +1,25 @@
+<%= form_for(@abstractnmap) do |f| %>
+  <% if @abstractnmap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@abstractnmap.errors.count, "error") %> prohibited this abstractnmap from being saved:</h2>
+
+      <ul>
+      <% @abstractnmap.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :abstract_id %><br />
+    <%= f.text_field :abstract_id %>
+  </div>
+  <div class="field">
+    <%= f.label :speaker_id %><br />
+    <%= f.text_field :speaker_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

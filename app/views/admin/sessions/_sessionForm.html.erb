@@ -1,0 +1,22 @@
+<%= semantic_form_for [:admin, @conference, @session] do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :title %>
+      <%= f.input :subtitle, :as => :string %>
+      <%= f.input :description %>
+      <%= f.input :day, :collection => Day.where("conference_id = ?", params[:conference_id]) %>
+      <%= f.input :room, :collection => Room.where("conference_id = ?", params[:conference_id]) %>
+      <%= f.input :starttime %>
+      <%= f.input :endtime %>
+      <%= f.input :abstract, :collection => Abstract.where("conference_id = ?", params[:conference_id]) %>
+      <%= f.input :rate %>
+      <%= f.input :livezone %>
+      <%= f.input :imageurl %>
+      <%= f.input :keynote %>
+      <%= f.input :break %>
+      <%= f.input :speakers, :collection => Speaker.where("conference_id = ?", params[:conference_id]), :as => :check_boxes %>
+      <%= f.input :sponsors, :collection => Sponsor.where("conference_id = ?", params[:conference_id]), :as => :check_boxes %>
+      <%= f.input :twitter %>
+      <%= f.input :facebook %>
+      <%= f.buttons %>
+    <% end %>
+<% end %>
