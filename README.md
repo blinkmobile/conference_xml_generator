@@ -10,9 +10,8 @@ It is also one of the first Rail's apps that I ever worked on and was extremely 
 Follow instructions appropriate to your system
 
 ### Windows ###
-1. Re-evaluate your choices in life
-2. Install Linux OR Install Vagrant and configure an appropriate environment
-3. Follow OSX instructions
+1. Install Linux OR Install Vagrant and configure an appropriate environment
+2. Follow OSX instructions
 
 ### OSX ###
 1. Ensure your system has ruby + rubygems + bundler installed
