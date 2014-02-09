@@ -5,15 +5,10 @@ gem 'rails', '3.0.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'taps'
 gem 'formtastic', '< 2.2.0'
 gem 'activeadmin', '0.4.4'
-gem 'delayed_job'
 gem 'rubyzip'
-gem 'heroku'
 gem 'json'
-gem 'mechanize'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,6 +29,10 @@ gem 'mechanize'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'sqlite3'
+  gem 'mechanize'
+  gem 'delayed_job'
+  gem 'heroku'
+  gem 'taps'
+end
