@@ -10,6 +10,7 @@ gem 'formtastic', '< 2.2.0'
 gem 'activeadmin', '0.4.4'
 gem 'rubyzip'
 gem 'json'
+gem 'pg'
 
 # Use unicorn as the web server
 # gem 'unicorn'
