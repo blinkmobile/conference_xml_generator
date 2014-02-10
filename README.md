@@ -27,7 +27,8 @@ It's been a long time since I had to do this, so the steps may have changed a li
 1. Sign up for an account at https://heroku.com/
 2. Install the Heroku Toolbelt - https://toolbelt.heroku.com/
 3. From your console, run `heroku login` and provide your credentials
-4. From your console, `heroku create`
+4. From your console, `heroku create` or `heroku apps:create`
+5. From your console, `heroku run rake db:migrate`
 
 
 ## To import the XML into the BMP ##
